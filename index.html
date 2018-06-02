@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>VPE Clone</title>
+  <style>
+    #output{
+      background-color: rgba(0,0,0,1);
+      width: auto;
+      max-width: 160px;
+      padding: 5px 10px;
+      border-radius: 10px 0 0 0;
+      color: #fff;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      font-family: monospace;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body onresize="displayVPDim()">
+  <div class="wrapper">
+    <h1>VPE Clone</h1>
+    <div id="output">Hello WhollyCoder...</div>
+  </div>
+  <script>
+  // Select Output Element
+      outputElement = document.getElementById("output");
+
+  // Create Function to Hide Output Element
+      function hideOutputElement(){
+          outputElement.style.visibility = "hidden";
+      }
+  // Create Function to Display ViewPort Dimensions (displayVPDim)
+
+      function displayVPDim(){
+        // Display Output Element
+        outputElement.style.visibility = "visible";
+        // Initialize Variables
+        // innerWidth  = iw // innerHeight = ih // outerWidth  = ow // outerHeight = oh
+        iw = window.innerWidth;
+        ih = window.innerHeight;
+        ow = window.outerWidth;
+        oh = window.outerHeight;
+
+        // Generate Output String
+        outputText = "Inner: "+iw+" x "+ih+"<br>";
+        outputText += "Outer: "+ow+" x "+oh+"<br>";
+
+        // Display Output
+        outputElement.innerHTML = outputText;
+
+        // Set Timeout to Hide Output Element
+        setTimeout(hideOutputElement, 10000);
+      }
+
+  </script>
+</body>
+</html>
